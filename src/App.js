@@ -1,25 +1,46 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useEffect, useRef } from "react";
+import './index.css';
+import $ from "jquery";
+import "datatables.net";
+import "datatables.net-dt/css/jquery.dataTables.css";
+import "datatables.net-dt/js/dataTables.dataTables";
+import "datatables.net-bs5/css/dataTables.bootstrap5.css";
+import "fomantic-ui-css/components/table.css";
+import "fomantic-ui-css/semantic.css";
 
-function App() {
+import axios from "axios";
+
+
+const Mahasiswa = () => {
+    
+  const tableRef = useRef(null);
+
+  useEffect(() => {
+    const fetchData = async () => {
+    
+      const result = await axios.get("http://10.28.1.86/restapi-oop/objects/data_mhs.php");
+      $("#tabel").DataTable({
+        destroy: true,
+        
+        data: result.data,
+        columns: [
+          { title: "NIM", data: "nim" },
+          { title: "Nama", data: "nama" },
+          { title: "Jenis Kelamin", data: "jenis_kelamin" },
+          { title: "Tempat Lahir", data: "tempat_lahir" },
+          { title: "Tanggal Lahir", data: "tanggal_lahir" },
+          { title: "Alamat", data: "alamat" }
+        ],
+      });
+    };
+    fetchData();
+  },)
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container" >
+      <table className="ui celled table" id="tabel"  ref={tableRef}></table>
     </div>
-  );
-}
+  )
+};
 
-export default App;
+export default Mahasiswa;
