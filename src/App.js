@@ -4,7 +4,6 @@ import $ from "jquery";
 import "datatables.net";
 import "datatables.net-dt/css/jquery.dataTables.css";
 import "datatables.net-dt/js/dataTables.dataTables";
-import "datatables.net-bs5/css/dataTables.bootstrap5.css";
 import "fomantic-ui-css/components/table.css";
 import "fomantic-ui-css/semantic.css";
 
