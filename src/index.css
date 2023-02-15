@@ -12,10 +12,7 @@ code {
     monospace;
 }
 .container {
-  padding-top: 40px;
+  padding-top: 4rem;
   width: 80%;
   margin: auto;
-}
- thead{
-  margin-top: 20px;
 }
