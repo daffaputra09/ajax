@@ -37,6 +37,7 @@ const Mahasiswa = () => {
   
   return (
     <div className="container" >
+      <h2>Data Mahasiswa</h2>
       <table className="ui celled table" id="tabel"  ref={tableRef}></table>
     </div>
   )

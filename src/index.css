@@ -16,3 +16,6 @@ code {
   width: 80%;
   margin: auto;
 }
+.container h2{
+  margin-bottom: 20px;
+}
