@@ -14,7 +14,7 @@ class App extends Component {
                  processing: true,
                  lengthMenu: [ [10, 25, 50, 100, -1], [10, 25, 50, 100, "All"] ],  
               ajax: {
-                  url: "http://10.28.1.86/restapiphp1/objects/server_side.php",   
+                  url: "http://10.28.1.86/restapi-oop/objects/server_side.php",   
               },
           });
   }
